@@ -5,13 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Rare Pepes</title>
+  <title><%= content_for(:title) ? "#{yield(:title)} | " : "" %>Rare Pepes</title>
 
-  <meta property="og:url"                content="http://rarepepes.heroku.com/" />
-  <meta property="og:type"               content="article" />
-  <meta property="og:title"              content="Dank Rare Pepes" />
-  <meta property="og:description"        content="Get your dank Rare Pepes memes here ;)" />
-  <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+  <% if content_for? :open_graph %>
+    <%= yield :open_graph %>
+  <% else %>
+    <meta property="og:url"                content="http://rarepep.es/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Dank Rare Pepes" />
+    <meta property="og:description"        content="Get your dank Rare Pepes memes here ;)" />
+    <meta property="og:image"              content="<%= image_path('pepe.png') %>" />
+  <% end %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

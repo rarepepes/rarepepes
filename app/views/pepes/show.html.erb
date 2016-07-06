@@ -1,3 +1,13 @@
+<%= content_for :title, @pepe.title %>
+
+<%= content_for :open_graph do %>
+  <meta property="og:url"                content="<%= pepe_url @pepe %>" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="<%= @pepe.title %>" />
+  <meta property="og:description"        content="<%= @pepe.description %>" />
+  <meta property="og:image"              content="<%= @pepe.image.url %>" />
+<% end %>
+
 <h2><%= @pepe.title %></h2>
 <div class="row">
   <div class="col-sm-12">
