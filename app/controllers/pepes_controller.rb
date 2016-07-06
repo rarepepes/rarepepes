@@ -1,15 +1,18 @@
 class PepesController < ApplicationController
   def index
-    @pepes = Pepe.all
+    @pepes = Pepe.all.order(created_at: :desc)
   end
 
   def new
     @pepe = Pepe.new
+    authorize @pepe
   end
 
   def create
     @pepe = Pepe.create(pepe_params)
     @pepe.user = current_user
+
+    authorize @pepe
 
     if @pepe.save
       redirect_to @pepe, notice: 'Pepe was successfully created.'
