@@ -1,5 +1,9 @@
 <h2>
-  All the Dank Rare Pepes Ever
+  <% if params[:user] %>
+    My Pepes
+  <% else %>
+    All the Dank Rare Pepes Ever
+  <% end %>
   <%= link_to "Upload Your Pepe", new_pepe_path, class: 'btn btn-success' %>
 </h2>
 
