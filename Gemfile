@@ -37,6 +37,8 @@ gem 'bootstrap-sass'
 gem 'aws-sdk', '~> 2.3'
 gem 'figaro'
 gem 'puma'
+gem 'paperclip'
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
