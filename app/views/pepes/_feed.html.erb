@@ -1,10 +1,12 @@
-<div class="row">
+<div class="row" id="pepe-feed">
   <% @pepes.each do |pepe| %>
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
       <div class="thumbnail">
-        <%= image_tag pepe.image.url(:medium) %>
+        <%= link_to pepe_path(pepe) do %>
+          <div class="pepe-image" style="background-image: url(<%= pepe.image.url(:medium) %>)"></div>
+        <% end %>
         <div class="caption">
-          <h3><%= pepe.title %></h3>
+          <h3><%= link_to pepe.title, pepe_path(pepe) %></h3>
           <p><%= pepe.description %></p>
           <p>
             <%= link_to "Show Me Pepe", pepe_path(pepe), class: 'btn btn-sm btn-primary' %>
