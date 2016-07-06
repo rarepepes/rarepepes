@@ -9,6 +9,9 @@
 <% end %>
 
 <h2><%= @pepe.title %></h2>
+
+<%= social_share_button_tag @pepe.title %>
+
 <div class="row">
   <div class="col-sm-12">
     <%= image_tag @pepe.image.url, class: 'img-responsive' %>

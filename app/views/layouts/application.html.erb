@@ -23,16 +23,16 @@
 </head>
 <body>
 
-<%= render "layouts/navbar" %>
+  <%= render "layouts/navbar" %>
 
-<div class="container">
-  <% if notice %><p class="alert alert-warning"><%= notice %></p><% end %>
-  <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
-</div>
+  <div class="container">
+    <% if notice %><p class="alert alert-warning"><%= notice %></p><% end %>
+    <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
+  </div>
 
-<div class="container">
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
