@@ -8,7 +8,7 @@ class PepePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.present? && record.user == user
+    record.user == user || user.try(:admin?)
   end
 
   class Scope < Scope
