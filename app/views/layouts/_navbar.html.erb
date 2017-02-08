@@ -1,38 +1,27 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Dank Rare Pepes", root_path, class: "navbar-brand" %>
-    </div>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded mb-3">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
+  <div class="container">
+    <%= link_to "Dank Rare Pepes", root_path, class: "navbar-brand" %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.email %>
-              <% if current_user.admin? %>
-                <span class="text-success">(admin)</span>
-              <% end %>
-              <span class="caret"></span>    
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "My Pepes", pepes_path(user: current_user) %></li>
-            </ul>
+          <li class="navbar-text mx-2">
+            <%= current_user.email %>
+            <% if current_user.admin? %>
+              <span class="text-success">(admin)</span>
+            <% end %>
           </li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li class="nav-item mx-2"><%= link_to "My Pepes", pepes_path(user: current_user), class: "btn btn-outline-success" %></li>
+          <li class="nav-item ml-2"><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %></li>
         <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Login", new_user_session_path %></li>
+          <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
         <% end %>
       </ul>
-    </div><!-- /.navbar-collapse -->
+    </div>
   </div>
 </nav>

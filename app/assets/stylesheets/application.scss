@@ -1,5 +1,11 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "social-share-button";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "home";
 @import "pepes";
+
+
+.btn-facebook {
+  @include button-variant(#fff, #3b5998, #3b5998)
+}

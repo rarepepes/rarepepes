@@ -23,7 +23,11 @@
       <% end -%>
 
       <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <%= f.submit "Log in", class: "btn btn-primary btn-block btn-lg" %>
+        <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-lg btn-block btn-facebook" do %>
+          <i class="fa fa-facebook-official mr-2" aria-hidden="true"></i>
+          Sign in with Facebook
+        <% end %>
       </div>
     <% end %>
 

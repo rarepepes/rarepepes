@@ -1,17 +1,17 @@
 <div class="row" id="pepe-feed">
   <% if @pepes.present? %>
     <% @pepes.each do |pepe| %>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-        <div class="thumbnail">
+      <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
           <%= link_to pepe_path(pepe) do %>
-            <div class="pepe-image" style="background-image: url(<%= pepe.image.url(:medium) %>)"></div>
+            <div class="card-img-top pepe-image" style="background-image: url(<%= pepe.image.url(:medium) %>)"></div>
           <% end %>
-          <div class="caption">
-            <h3><%= link_to pepe.title, pepe_path(pepe) %></h3>
+          <div class="card-block">
+            <h3 class="card-title"><%= link_to pepe.title, pepe_path(pepe) %></h3>
             <p><%= pepe.description %></p>
             <p>
-              <%= link_to "Show Me Pepe", pepe_path(pepe), class: 'btn btn-sm btn-primary' %>
-              <%= link_to "Disown Pepe", pepe_path(pepe), method: :delete, data: { confirm: 'Are you sure you want to disown pepe?' }, class: 'btn btn-sm btn-danger' if policy(pepe).destroy? %>
+              <%= link_to "Show Me Pepe", pepe_path(pepe), class: 'btn btn-block btn-primary' %>
+              <%= link_to "Disown Pepe", pepe_path(pepe), method: :delete, data: { confirm: 'Are you sure you want to disown pepe?' }, class: 'btn btn-block btn-danger' if policy(pepe).destroy? %>
             </p>
           </div>
         </div>

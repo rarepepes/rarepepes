@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'pg'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'aws-sdk', '~> 2.3'
 gem 'figaro'
 gem 'puma'
@@ -41,6 +41,8 @@ gem 'paperclip'
 gem 'pundit'
 gem 'social-share-button'
 gem 'omniauth-facebook'
+gem 'font-awesome-sass', '~> 4.7.0'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
